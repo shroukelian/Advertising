@@ -145,6 +145,10 @@ body {
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
     background-color: #ffd43b;
 }
+.whatsapp-btn i {
+    position: relative;
+    top: 2px;
+}
 
 /* --- Styling for the About Us Image --- */
 .about-image-container {
@@ -260,4 +264,58 @@ body {
     transform: translateX(-10px); 
     background-color: rgba(14, 33, 60, 0.05); 
     color: var(--primary-color); 
+}
+
+/* --- Services Section (V4 - Centered Content) --- */
+.services-section {
+    background-color: var(--light-color);
+}
+
+.service-card {
+    background-color: #fff;
+    padding: 40px 25px; /* زيادة المساحة العمودية قليلاً */
+    border-radius: 15px;
+    border: 1px solid #e9ecef;
+    text-align: center; /* <<<  1. توسيط كل النصوص */
+    height: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.service-card .icon-container {
+    width: 60px; /* تكبير حجم الأيقونة قليلاً */
+    height: 60px;
+    margin: 0 auto 20px auto; /* <<< 2. توسيط حاوية الأيقونة أفقياً */
+    background-color: rgba(14, 33, 60, 0.07);
+    color: var(--primary-color);
+    border-radius: 12px; /* تغيير بسيط في شكل الحواف */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem; /* تكبير الأيقونة نفسها */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.service-card h5 {
+    color: var(--primary-color);
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.service-card p {
+    color: #6c757d;
+    font-size: 0.9rem;
+    line-height: 1.7;
+}
+
+/* Hover effects remain the same */
+.service-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    border-color: transparent;
+}
+
+.service-card:hover .icon-container {
+    background-color: var(--secondary-color);
+    color: #fff;
 }
