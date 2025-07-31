@@ -119,30 +119,31 @@ body {
 .about-section .list-unstyled li { margin-bottom: 10px; font-weight: 500; }
 .about-section .list-unstyled i { color: var(--secondary-color); margin-left: 8px; }
 
-/* --- Floating Action Button (WhatsApp) - Redesigned --- */
+/* --- Floating Action Button (WhatsApp) - Final Adjustment --- */
 .whatsapp-btn {
     position: fixed;
-    bottom: 25px;
-    right: 25px;
-    width: 55px; 
+    bottom: 20px; /* تقليل المسافة من الأسفل قليلاً */
+    right: 20px;  /* تقليل المسافة من اليمين قليلاً */
+    width: 55px;
     height: 55px;
-    background-color: var(--secondary-color); 
-    color: var(--primary-color); 
-    border-radius: 12px; 
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.8rem; 
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); 
+    font-size: 1.6rem; /* <<< تقليل حجم الأيقونة قليلاً جداً */
+    line-height: 1; /* <<< إضافة هذا السطر لإزالة أي مسافات إضافية للخط */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     z-index: 1000;
     border: none;
-    transition: all 0.3s ease-in-out; 
+    transition: all 0.3s ease-in-out;
 }
 
 .whatsapp-btn:hover {
-    transform: scale(1.1); 
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25); 
-    background-color: #ffd43b; 
+    transform: scale(1.1);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+    background-color: #ffd43b;
 }
 
 /* --- Styling for the About Us Image --- */
