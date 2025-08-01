@@ -1,237 +1,78 @@
 /* ===================================================================
-   TABLE OF CONTENTS
-   -------------------------------------------------------------------
-   01. General Styles
-   02. Preloader
-   03. Navigation Bar
-   04. Hero Section
-   05. Stats Section
-   06. About Us Section
-   07. Services Section
-   08. Portfolio Section
-   09. Testimonials Section
-   10. CTA Section
-   11. Contact Section
-   12. Footer
-   13. Floating WhatsApp Button
-   14. Responsive Adjustments
+   Final Corrected Version
 =================================================================== */
 
 /* 01. General Styles */
-:root {
-    --primary-color: #0E213C;
-    --secondary-color: #FFC107;
-    --light-color: #f8f9fa;
-    --dark-color: #343a40;
-}
-html, body {
-    overflow-x: hidden; /* الحل النهائي والجذري هنا */
-}
-body {
-    font-family: 'Tajawal', sans-serif;
-    background-color: var(--light-color);
-    color: var(--dark-color);
-}
-.section-title {
-    color: var(--primary-color);
-    font-weight: 700;
-    margin-bottom: 20px;
-}
-.section-title::after {
-    content: ''; display: block;
-    width: 60px; height: 4px;
-    background-color: var(--secondary-color);
-    border-radius: 2px; margin-top: 15px;
-    margin-right: auto; margin-left: auto;
-}
-.text-lg-end .section-title::after {
-    margin-right: 0; margin-left: auto;
-}
+:root { --primary-color: #0E213C; --secondary-color: #FFC107; --light-color: #f8f9fa; --dark-color: #343a40; }
+html, body { overflow-x: hidden; }
+body { font-family: 'Tajawal', sans-serif; background-color: var(--light-color); color: var(--dark-color); }
+.section-title { color: var(--primary-color); font-weight: 700; margin-bottom: 20px; }
+.section-title::after { content: ''; display: block; width: 60px; height: 4px; background-color: var(--secondary-color); border-radius: 2px; margin-top: 15px; margin-right: auto; margin-left: auto; }
+.text-lg-end .section-title::after { margin-right: 0; margin-left: auto; }
 
 /* 02. Preloader */
-#preloader {
-    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-    background-color: var(--primary-color); z-index: 9999;
-    display: flex; justify-content: center; align-items: center;
-    transition: opacity 0.75s ease, visibility 0.75s ease;
-}
+#preloader { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: var(--primary-color); z-index: 9999; display: flex; justify-content: center; align-items: center; transition: opacity 0.75s ease, visibility 0.75s ease; }
 #preloader.hidden { opacity: 0; visibility: hidden; }
 .loader img { animation: pulse 1.5s infinite ease-in-out; }
-@keyframes pulse {
-    0% { transform: scale(1); } 50% { transform: scale(1.1); } 100% { transform: scale(1); }
-}
+@keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.1); } 100% { transform: scale(1); } }
 
 /* 03. Navigation Bar */
-.navbar {
-    background-color: rgba(14, 33, 60, 0.9);
-    backdrop-filter: blur(5px);
-}
+.navbar { background-color: rgba(14, 33, 60, 0.9); backdrop-filter: blur(5px); }
 .navbar .navbar-brand { font-weight: 700; font-size: 1.5rem; color: #fff; }
 .nav-link { color: #e0e0e0; font-weight: 500; margin: 0 10px; transition: all 0.3s ease; }
 .nav-link:hover, .nav-link.active { color: var(--secondary-color); transform: translateY(-2px); }
-.btn-outline-brand {
-    color: var(--secondary-color); border-color: var(--secondary-color);
-    transition: all 0.3s ease;
-}
-.btn-outline-brand:hover {
-    color: var(--primary-color); background-color: var(--secondary-color);
-}
+.btn-outline-brand { color: var(--secondary-color); border-color: var(--secondary-color); transition: all 0.3s ease; }
+.btn-outline-brand:hover { color: var(--primary-color); background-color: var(--secondary-color); }
 
 /* 04. Hero Section */
-.hero-section {
-    position: relative; overflow: hidden;
-    background: linear-gradient(rgba(14, 33, 60, 0.85), rgba(14, 33, 60, 0.85)), url('https://images.unsplash.com/photo-1593344484962-796b4948a2fe?w=1000') center center;
-    background-size: cover; height: 100vh;
-    display: flex; align-items: center; justify-content: center; color: #fff;
-}
+.hero-section { position: relative; overflow: hidden; background: linear-gradient(rgba(14, 33, 60, 0.85), rgba(14, 33, 60, 0.85)), url('https://images.unsplash.com/photo-1593344484962-796b4948a2fe?w=1000') center center; background-size: cover; height: 100vh; display: flex; align-items: center; justify-content: center; color: #fff; }
 .hero-section h1 { font-size: 3.5rem; font-weight: 700; }
 .hero-section .lead { font-size: 1.4rem; max-width: 600px; margin: 1rem auto; }
-.btn-brand {
-    background-color: var(--secondary-color); color: var(--primary-color);
-    border: none; padding: 12px 30px; font-weight: 700;
-    border-radius: 50px; transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(255, 193, 7, 0.3);
-}
-.btn-brand:hover {
-    background-color: #ffca2c; transform: translateY(-3px) scale(1.05);
-    box-shadow: 0 8px 25px rgba(255, 193, 7, 0.4);
-}
-.btn-outline-light {
-    padding: 12px 30px; font-weight: 700;
-    border-radius: 50px; border-width: 2px;
-    transition: all 0.3s ease;
-}
+.btn-brand { background-color: var(--secondary-color); color: var(--primary-color); border: none; padding: 12px 30px; font-weight: 700; border-radius: 50px; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(255, 193, 7, 0.3); }
+.btn-brand:hover { background-color: #ffca2c; transform: translateY(-3px) scale(1.05); box-shadow: 0 8px 25px rgba(255, 193, 7, 0.4); }
+.btn-outline-light { padding: 12px 30px; font-weight: 700; border-radius: 50px; border-width: 2px; transition: all 0.3s ease; }
 .btn-outline-light:hover { background-color: #fff; color: var(--primary-color); }
-.floating-icon {
-    position: absolute; color: rgba(255, 255, 255, 0.1);
-    font-size: 5rem; animation: float 15s ease-in-out infinite;
-}
-.icon1 { top: 15%; left: 10%; } .icon2 { top: 70%; left: 80%; animation-delay: 3s; font-size: 7rem; }
-.icon3 { top: 50%; left: 5%; animation-delay: 7s; }
-@keyframes float {
-    0% { transform: translateY(0px) rotate(0deg); }
-    50% { transform: translateY(-30px) rotate(180deg); }
-    100% { transform: translateY(0px) rotate(360deg); }
-}
+.hero-section [data-aos] { opacity: 0; transition-property: transform, opacity; }
+.hero-section [data-aos].aos-animate { opacity: 1; }
+.floating-icon { position: absolute; color: rgba(255, 255, 255, 0.1); font-size: 5rem; animation: float 15s ease-in-out infinite; }
+.icon1 { top: 15%; left: 10%; } .icon2 { top: 70%; left: 80%; animation-delay: 3s; font-size: 7rem; } .icon3 { top: 50%; left: 5%; animation-delay: 7s; }
+@keyframes float { 0% { transform: translateY(0px) rotate(0deg); } 50% { transform: translateY(-30px) rotate(180deg); } 100% { transform: translateY(0px) rotate(360deg); } }
 
 /* 05. Stats Section */
-.stats-section {
-    background-color: var(--primary-color); color: #fff;
-    padding: 40px 0; margin-top: -1px;
-}
+.stats-section { background-color: var(--primary-color); color: #fff; padding: 40px 0; margin-top: -1px; }
 .stats-section h3 { font-size: 2.5rem; font-weight: 700; color: var(--secondary-color); }
 .stats-section p { font-size: 1rem; color: rgba(255, 255, 255, 0.8); }
 
 /* 06. About Us Section */
 .about-section { background-color: #fff; padding: 80px 0; }
 .about-section p { line-height: 1.8; }
-.about-section .list-unstyled li {
-    padding: 10px 15px; border-radius: 8px;
-    transition: all 0.3s ease-in-out; margin-bottom: 5px; font-weight: 500;
-}
-.about-section .list-unstyled li:hover {
-    transform: translateX(-5px); /* تقليل الحركة قليلاً */
-    background-color: rgba(14, 33, 60, 0.05); color: var(--primary-color);
-}
+.about-section .list-unstyled li { padding: 10px 15px; border-radius: 8px; transition: all 0.3s ease-in-out; margin-bottom: 5px; font-weight: 500; }
+.about-section .list-unstyled li:hover { transform: translateX(-5px); background-color: rgba(14, 33, 60, 0.05); color: var(--primary-color); }
 .about-section .list-unstyled i { color: var(--secondary-color); margin-left: 8px; }
-.about-image-container {
-    position: relative; display: flex; align-items: center; justify-content: center;
-    min-height: 400px; max-width: 480px; margin: 0 auto;
-}
-.about-image-container img {
-    border-radius: 15px; box-shadow: 0 15px 35px rgba(14, 33, 60, 0.15);
-    border: 5px solid #fff; position: relative; z-index: 2;
-    max-width: 90%; transition: transform 0.4s ease-in-out;
-}
+.about-image-container { position: relative; display: flex; align-items: center; justify-content: center; min-height: 400px; max-width: 480px; margin: 0 auto; }
+.about-image-container img { border-radius: 15px; box-shadow: 0 15px 35px rgba(14, 33, 60, 0.15); border: 5px solid #fff; position: relative; z-index: 2; max-width: 90%; transition: transform 0.4s ease-in-out; }
 .about-image-container:hover img { transform: scale(1.05); }
-.about-image-container::before {
-    content: ''; position: absolute; z-index: 1; top: 0; left: 0;
-    width: 80%; height: 80%; background-color: rgba(14, 33, 60, 0.05);
-    border-radius: 20px; transform: rotate(-15deg);
-}
-.about-image-container::after {
-    content: ''; position: absolute; z-index: 3; bottom: 20px; right: 20px;
-    width: 80px; height: 80px; background-color: var(--secondary-color);
-    border-radius: 50%; transform: translate(30%, 30%); opacity: 0.8;
-}
+.about-image-container::before { content: ''; position: absolute; z-index: 1; top: 0; left: 0; width: 80%; height: 80%; background-color: rgba(14, 33, 60, 0.05); border-radius: 20px; transform: rotate(-15deg); }
+.about-image-container::after { content: ''; position: absolute; z-index: 3; bottom: 20px; right: 20px; width: 80px; height: 80px; background-color: var(--secondary-color); border-radius: 50%; transform: translate(30%, 30%); opacity: 0.8; }
 
-/* --- Services Section (V5 - Perfect Centering with Flexbox) --- */
-.services-section {
-    background-color: var(--light-color);
-}
+/* 07. Services Section */
+.services-section { background-color: var(--light-color); }
+.service-card { background-color: #fff; padding: 40px 25px; border-radius: 15px; border: 1px solid #e9ecef; text-align: center; height: 100%; transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; }
+.service-card .icon-container { width: 60px; height: 60px; margin-right: auto !important; margin-left: auto !important; margin-bottom: 20px; background-color: rgba(14, 33, 60, 0.07); color: var(--primary-color); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; transition: background-color 0.3s ease, color 0.3s ease; }
+.service-card h5 { color: var(--primary-color); font-weight: 700; font-size: 1.1rem; margin-bottom: 10px; }
+.service-card p { color: #6c757d; font-size: 0.9rem; line-height: 1.7; }
+.service-card:hover { transform: scale(1.05); box-shadow: 0 15px 30px rgba(0,0,0,0.1); border-color: transparent; }
+.service-card:hover .icon-container { background-color: var(--secondary-color); color: #fff; }
 
-.service-card {
-    background-color: #fff;
-    padding: 40px 25px;
-    border-radius: 15px;
-    border: 1px solid #e9ecef;
-    text-align: center; /* توسيط كل النصوص */
-    height: 100%;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-    /* لا حاجة لـ display: flex هنا */
-}
-
-.service-card .icon-container {
-    width: 60px;
-    height: 60px;
-    margin: 0 auto 20px auto; /* <<< هذا هو السطر الذي يضمن التوسيط */
-    background-color: rgba(14, 33, 60, 0.07);
-    color: var(--primary-color);
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.8rem;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.service-card h5 {
-    color: var(--primary-color);
-    font-weight: 700;
-    font-size: 1.1rem;
-    margin-bottom: 10px;
-}
-
-.service-card p {
-    color: #6c757d;
-    font-size: 0.9rem;
-    line-height: 1.7;
-}
-
-/* Hover effects remain the same */
-.service-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-    border-color: transparent;
-}
-
-.service-card:hover .icon-container {
-    background-color: var(--secondary-color);
-    color: #fff;
-}
 /* 08. Portfolio Section */
 .portfolio-section { background-color: #fff; }
 .portfolio-filters { display: inline-flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
-.portfolio-filters .btn {
-    background-color: #f8f9fa; color: var(--dark-color);
-    border-radius: 50px; padding: 8px 25px; font-weight: 500;
-    border: 1px solid #dee2e6; transition: all 0.3s ease;
-}
+.portfolio-filters .btn { background-color: #f8f9fa; color: var(--dark-color); border-radius: 50px; padding: 8px 25px; font-weight: 500; border: 1px solid #dee2e6; transition: all 0.3s ease; }
 .portfolio-filters .btn:hover, .portfolio-filters .btn.active { background-color: var(--primary-color); color: #fff; border-color: var(--primary-color); }
 .portfolio-item a { display: block; position: relative; width: 100%; padding-top: 75%; overflow: hidden; border-radius: 15px; }
 .portfolio-item img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
-.portfolio-item .portfolio-overlay {
-    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-    background: linear-gradient(to top, rgba(14, 33, 60, 0.9), rgba(14, 33, 60, 0.2));
-    opacity: 0; transition: opacity 0.4s ease;
-    display: flex; align-items: flex-end; justify-content: center;
-    padding: 20px; text-align: center;
-}
-.portfolio-item .portfolio-info {
-    color: #fff; width: 100%;
-    transition: transform 0.4s ease, opacity 0.4s ease;
-    opacity: 0; transform: translateY(30px);
-}
+.portfolio-item .portfolio-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to top, rgba(14, 33, 60, 0.9), rgba(14, 33, 60, 0.2)); opacity: 0; transition: opacity 0.4s ease; display: flex; align-items: flex-end; justify-content: center; padding: 20px; text-align: center; }
+.portfolio-item .portfolio-info { color: #fff; width: 100%; transition: transform 0.4s ease, opacity 0.4s ease; opacity: 0; transform: translateY(30px); }
 .portfolio-item .portfolio-info h5 { font-weight: 700; }
 .portfolio-item .portfolio-info p { font-size: 0.9rem; color: rgba(255, 255, 255, 0.8); margin-bottom: 0; }
 .portfolio-item:hover .portfolio-info { opacity: 1; transform: translateY(0); }
@@ -239,23 +80,10 @@ body {
 .portfolio-item:hover .portfolio-overlay { opacity: 1; }
 
 /* 09. Testimonials Section */
-.testimonials-section { background-color: var(--light-color); }
-.testimonials-slider { overflow: hidden; } /* الحل هنا */
-.testimonial-card {
-    background-color: #fff; padding: 30px; border-radius: 15px;
-    border: 1px solid #e9ecef; height: 100%;
-    display: flex; flex-direction: column; justify-content: space-between;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-}
-.testimonial-text {
-    font-style: italic; color: var(--dark-color); line-height: 1.8;
-    margin-bottom: 25px; position: relative; padding-right: 40px;
-}
-.testimonial-text::before {
-    content: "\F6B0"; font-family: 'bootstrap-icons';
-    position: absolute; top: -10px; right: 0; font-size: 2.5rem;
-    color: var(--secondary-color); opacity: 0.5;
-}
+.testimonials-section { background-color: var(--light-color); overflow: hidden; }
+.testimonial-card { background-color: #fff; padding: 30px; border-radius: 15px; border: 1px solid #e9ecef; height: 100%; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+.testimonial-text { font-style: italic; color: var(--dark-color); line-height: 1.8; margin-bottom: 25px; position: relative; padding-right: 40px; }
+.testimonial-text::before { content: "\F6B0"; font-family: 'bootstrap-icons'; position: absolute; top: -10px; right: 0; font-size: 2.5rem; color: var(--secondary-color); opacity: 0.5; }
 .testimonial-author { display: flex; align-items: center; }
 .testimonial-author img { width: 60px; height: 60px; border-radius: 50%; margin-left: 15px; }
 .testimonial-author h5 { margin-bottom: 2px; font-size: 1rem; font-weight: 700; color: var(--primary-color); }
@@ -264,10 +92,7 @@ body {
 .swiper-pagination-bullet-active { background-color: var(--secondary-color); opacity: 1; }
 
 /* 10. CTA Section */
-.cta-section {
-    background: linear-gradient(rgba(14, 33, 60, 0.92), rgba(14, 33, 60, 0.92)), url('https://images.unsplash.com/photo-1593344484962-796b4948a2fe?w=1000') center center;
-    background-size: cover; background-attachment: fixed;
-}
+.cta-section { background: linear-gradient(rgba(14, 33, 60, 0.92), rgba(14, 33, 60, 0.92)), url('https://images.unsplash.com/photo-1593344484962-796b4948a2fe?w=1000') center center; background-size: cover; background-attachment: fixed; }
 .cta-section .btn-brand { padding: 15px 40px; font-size: 1.1rem; }
 
 /* 11. Contact Section */
@@ -276,16 +101,12 @@ body {
 .contact-form { background-color: #fff; border-radius: 15px; }
 .contact-form .form-control { border-radius: 8px; padding: 12px 15px; border: 1px solid #ddd; transition: all 0.3s ease; }
 .contact-form .form-control:focus { border-color: var(--secondary-color); box-shadow: 0 0 0 0.25rem rgba(255, 193, 7, 0.25); }
+.contact-info p { font-size: 1rem; margin-bottom: 15px; display: flex; align-items: center; }
+.contact-info i { color: var(--secondary-color); font-size: 1.2rem; margin-left: 15px; width: 20px; }
+.contact-info a { text-decoration: none; color: var(--dark-color); transition: color 0.3s ease; }
+.contact-info a:hover { color: var(--primary-color); }
 
 /* 12. Footer */
-.footer-contact a {
-    color: inherit; /* يأخذ نفس لون النص الأصلي */
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-.footer-contact a:hover {
-    color: var(--secondary-color);
-}
 .footer-section { background-color: var(--primary-color); color: rgba(255, 255, 255, 0.7); }
 .footer-logo { font-weight: 700; font-size: 1.5rem; color: #fff; text-decoration: none; display: flex; align-items: center; }
 .footer-logo img { margin-left: 10px; }
@@ -296,46 +117,16 @@ body {
 .footer-contact li { display: flex; align-items: flex-start; margin-bottom: 15px; }
 .footer-contact i { color: var(--secondary-color); margin-left: 15px; font-size: 1.1rem; margin-top: 3px; }
 .footer-contact span { flex: 1; }
-/* الكود الجديد الذي يحل المشكلة */
-.social-icons {
-    display: flex; /* استخدام flex للتوسيط والمسافات */
-    justify-content: center; /* توسيط الأيقونات أفقياً */
-    gap: 15px; /* إضافة مسافة بين الأيقونات بطريقة حديثة */
-}
-.social-icons a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    background-color: rgba(255, 255, 255, 0.1);
-    color: #fff;
-    border-radius: 50%;
-    text-decoration: none;
-    /* margin-left: 10px; <<< لم نعد بحاجة لهذا السطر */
-    transition: all 0.3s ease;
-}
+.footer-contact a { color: inherit; text-decoration: none; transition: color 0.3s ease; }
+.footer-contact a:hover { color: var(--secondary-color); }
+.social-icons { display: flex; gap: 15px; }
+.social-icons a { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; background-color: rgba(255, 255, 255, 0.1); color: #fff; border-radius: 50%; text-decoration: none; transition: all 0.3s ease; }
 .social-icons a:hover { background-color: var(--secondary-color); color: var(--primary-color); transform: translateY(-3px); }
-.footer-bottom { background-color: rgba(0, 0, 0, 0.2); color: rgba(255, 255, 255, 0.5); font-size: 0.9rem; }
+.footer-bottom { background-color: rgba(0, 0, 0, 0.2); color: rgba(255, 255, 255, 0.5); font-size: 0.9rem; border-top: 1px solid rgba(255, 255, 255, 0.1); }
 
 /* 13. Floating WhatsApp Button */
-.whatsapp-btn {
-    position: fixed;
-     bottom: 20px;
-      right: 20px;
-    width: 55px;
-     height: 55px; 
-     background-color: var(--secondary-color);
-    color: var(--primary-color); border-radius: 12px;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 1.6rem; line-height: 1;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    z-index: 1000; border: none; transition: all 0.3s ease-in-out;
-}
-.whatsapp-btn:hover {
-    transform: scale(1.1); box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
-    background-color: #ffd43b;
-}
+.whatsapp-btn { position: fixed; bottom: 20px; right: 20px; width: 55px; height: 55px; background-color: var(--secondary-color); color: var(--primary-color); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.6rem; line-height: 1; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); z-index: 1000; border: none; transition: all 0.3s ease-in-out; }
+.whatsapp-btn:hover { transform: scale(1.1); box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25); background-color: #ffd43b; }
 .whatsapp-btn i { position: relative; top: 2px; }
 
 /* 14. Responsive Adjustments */
@@ -351,13 +142,6 @@ body {
     .stats-section .col-6 { margin-bottom: 25px; }
     .section-title { font-size: 1.8rem; }
     .service-card { padding: 30px 20px; }
-}
-/* --- Hero Section Animation Fix --- */
-.hero-section [data-aos] {
-    opacity: 0; /* اجعل العناصر مخفية في البداية */
-    transition-property: transform, opacity; /* حدد الخصائص التي ستتحرك */
-}
-
-.hero-section [data-aos].aos-animate {
-    opacity: 1; /* عند بدء الأنيميشن، اجعلها ظاهرة */
+    .footer-widget { text-align: center; }
+    .footer-widget .social-icons { justify-content: center; }
 }
