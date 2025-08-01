@@ -303,7 +303,7 @@ body {
     gap: 15px; /* إضافة مسافة بين الأيقونات بطريقة حديثة */
 }
 .social-icons a {
-    display: inline-flex;
+    display: flex;
     align-items: center;
     justify-content: center;
     width: 40px;
