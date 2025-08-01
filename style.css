@@ -1,22 +1,11 @@
 /* ===================================================================
-   Final Corrected Version - Guaranteed Fix
+   Final Corrected Version
 =================================================================== */
 
 /* 01. General Styles */
 :root { --primary-color: #0E213C; --secondary-color: #FFC107; --light-color: #f8f9fa; --dark-color: #343a40; }
-
-/* الحل النهائي والجذري هنا */
-.site-wrapper {
-    position: relative;
-    overflow-x: hidden;
-    width: 100%;
-}
-
-body {
-    font-family: 'Tajawal', sans-serif;
-    background-color: var(--light-color);
-    color: var(--dark-color);
-}
+html, body { overflow-x: hidden; }
+body { font-family: 'Tajawal', sans-serif; background-color: var(--light-color); color: var(--dark-color); }
 .section-title { color: var(--primary-color); font-weight: 700; margin-bottom: 20px; }
 .section-title::after { content: ''; display: block; width: 60px; height: 4px; background-color: var(--secondary-color); border-radius: 2px; margin-top: 15px; margin-right: auto; margin-left: auto; }
 .text-lg-end .section-title::after { margin-right: 0; margin-left: auto; }
@@ -58,7 +47,7 @@ body {
 .about-section { background-color: #fff; padding: 80px 0; }
 .about-section p { line-height: 1.8; }
 .about-section .list-unstyled li { padding: 10px 15px; border-radius: 8px; transition: all 0.3s ease-in-out; margin-bottom: 5px; font-weight: 500; }
-.about-section .list-unstyled li:hover { background-color: rgba(14, 33, 60, 0.05); color: var(--primary-color); /* تم حذف الحركة الجانبية */ }
+.about-section .list-unstyled li:hover { transform: translateX(-5px); background-color: rgba(14, 33, 60, 0.05); color: var(--primary-color); }
 .about-section .list-unstyled i { color: var(--secondary-color); margin-left: 8px; }
 .about-image-container { position: relative; display: flex; align-items: center; justify-content: center; min-height: 400px; max-width: 480px; margin: 0 auto; }
 .about-image-container img { border-radius: 15px; box-shadow: 0 15px 35px rgba(14, 33, 60, 0.15); border: 5px solid #fff; position: relative; z-index: 2; max-width: 90%; transition: transform 0.4s ease-in-out; }
@@ -69,7 +58,10 @@ body {
 /* 07. Services Section */
 .services-section { background-color: var(--light-color); }
 .service-card { background-color: #fff; padding: 40px 25px; border-radius: 15px; border: 1px solid #e9ecef; text-align: center; height: 100%; transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; }
-.service-card .icon-container { width: 60px; height: 60px; margin: 0 auto 20px auto; background-color: rgba(14, 33, 60, 0.07); color: var(--primary-color); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; transition: background-color 0.3s ease, color 0.3s ease; }
+.service-card .icon-container 
+{ width: 60px; height: 60px; margin-right: auto !important; margin-left: auto !important; margin-bottom: 20px; background-color: rgba(14, 33, 60, 0.07); color: var(--primary-color); border-radius: 12px;
+     display: flex; align-items: center; justify-content: center; 
+     font-size: 1.8rem; transition: background-color 0.3s ease, color 0.3s ease; }
 .service-card h5 { color: var(--primary-color); font-weight: 700; font-size: 1.1rem; margin-bottom: 10px; }
 .service-card p { color: #6c757d; font-size: 0.9rem; line-height: 1.7; }
 .service-card:hover { transform: scale(1.05); box-shadow: 0 15px 30px rgba(0,0,0,0.1); border-color: transparent; }
@@ -91,8 +83,7 @@ body {
 .portfolio-item:hover .portfolio-overlay { opacity: 1; }
 
 /* 09. Testimonials Section */
-.testimonials-section { background-color: var(--light-color); }
-.swiper-container { overflow: hidden; padding-bottom: 40px; }
+.testimonials-section { background-color: var(--light-color); overflow: hidden; }
 .testimonial-card { background-color: #fff; padding: 30px; border-radius: 15px; border: 1px solid #e9ecef; height: 100%; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
 .testimonial-text { font-style: italic; color: var(--dark-color); line-height: 1.8; margin-bottom: 25px; position: relative; padding-right: 40px; }
 .testimonial-text::before { content: "\F6B0"; font-family: 'bootstrap-icons'; position: absolute; top: -10px; right: 0; font-size: 2.5rem; color: var(--secondary-color); opacity: 0.5; }
@@ -100,7 +91,6 @@ body {
 .testimonial-author img { width: 60px; height: 60px; border-radius: 50%; margin-left: 15px; }
 .testimonial-author h5 { margin-bottom: 2px; font-size: 1rem; font-weight: 700; color: var(--primary-color); }
 .testimonial-author span { font-size: 0.9rem; color: #6c757d; }
-.swiper-pagination { bottom: 0 !important; position: relative !important; margin-top: 20px; }
 .swiper-pagination-bullet { background-color: var(--primary-color); width: 10px; height: 10px; opacity: 0.5; }
 .swiper-pagination-bullet-active { background-color: var(--secondary-color); opacity: 1; }
 
