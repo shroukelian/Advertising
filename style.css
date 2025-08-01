@@ -113,8 +113,31 @@ body {
 
 /* --- About Us Section --- */
 .about-section { background-color: #fff; padding: 80px 0; overflow-x: hidden; }
-.section-title { color: var(--primary-color); font-weight: 700; position: relative; margin-bottom: 30px; padding-bottom: 10px; }
-.section-title::after { content: ''; position: absolute; bottom: 0; right: 0; width: 60px; height: 4px; background-color: var(--secondary-color); border-radius: 2px; }
+/* --- Section Title - Final Adjustment --- */
+.section-title {
+    color: var(--primary-color);
+    font-weight: 700;
+    position: relative;
+    margin-bottom: 20px; 
+    padding-bottom: 0; 
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: var(--secondary-color);
+    border-radius: 2px;
+    margin-top: 10px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.text-lg-end .section-title::after {
+    margin-right: 0;
+    margin-left: auto;
+}
 .about-section p { line-height: 1.8; }
 .about-section .list-unstyled li { margin-bottom: 10px; font-weight: 500; }
 .about-section .list-unstyled i { color: var(--secondary-color); margin-left: 8px; }
@@ -318,4 +341,252 @@ body {
 .service-card:hover .icon-container {
     background-color: var(--secondary-color);
     color: #fff;
+}
+
+/* --- Portfolio Section (V2 with Image Sizing Fix) --- */
+.portfolio-section {
+    background-color: #fff;
+}
+.portfolio-filters {
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+.portfolio-filters .btn {
+    background-color: #f8f9fa;
+    color: var(--dark-color);
+    border-radius: 50px;
+    padding: 8px 25px;
+    font-weight: 500;
+    border: 1px solid #dee2e6;
+    transition: all 0.3s ease;
+}
+.portfolio-filters .btn:hover {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    border-color: var(--secondary-color);
+}
+.portfolio-filters .btn.active {
+    background-color: var(--primary-color);
+    color: #fff;
+    border-color: var(--primary-color);
+}
+
+.portfolio-item {
+    position: relative;
+    overflow: hidden;
+    /* تم حذف الـ border-radius والـ margin-bottom من هنا */
+}
+
+/* --- هنا الكود الجديد الذي يحل المشكلة --- */
+.portfolio-item a {
+    display: block;
+    position: relative;
+    width: 100%;
+    padding-top: 75%; /* Aspect Ratio 4:3 */
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+.portfolio-item img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+/* --- نهاية الكود الجديد --- */
+
+/* الكود الجديد والمُحسّن */
+.portfolio-item .portfolio-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(14, 33, 60, 0.9), rgba(14, 33, 60, 0.2));
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    display: flex;
+    align-items: center;   /*  تغيير 1: توسيط عمودي */
+    justify-content: center;
+    text-align: center;      /* تغيير 2: توسيط أفقي للنص */
+    padding: 20px;
+}
+
+.portfolio-item .portfolio-info {
+    color: #fff;
+    transform: translateY(20px);
+    transition: transform 0.4s ease;
+}
+.portfolio-item .portfolio-info h5 {
+    font-weight: 700;
+}
+.portfolio-item .portfolio-info p {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 0;
+}
+
+.portfolio-item:hover img {
+    transform: scale(1.1);
+}
+
+.portfolio-item:hover .portfolio-overlay {
+    opacity: 1;
+}
+
+.portfolio-item:hover .portfolio-info {
+    transform: translateY(0);
+}
+
+/* --- Testimonials Section --- */
+.testimonials-section {
+    background-color: var(--light-color);
+}
+.testimonial-card {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    border: 1px solid #e9ecef;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.testimonial-text {
+    font-style: italic;
+    color: var(--dark-color);
+    line-height: 1.8;
+    margin-bottom: 25px;
+    position: relative;
+    padding-right: 40px;
+}
+.testimonial-text::before {
+    content: "\F6B0"; /* أيقونة الاقتباس من Bootstrap Icons */
+    font-family: 'bootstrap-icons';
+    position: absolute;
+    top: -10px;
+    right: 0;
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+    opacity: 0.5;
+}
+.testimonial-author {
+    display: flex;
+    align-items: center;
+}
+.testimonial-author img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-left: 15px;
+}
+.testimonial-author h5 {
+    margin-bottom: 2px;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+.testimonial-author span {
+    font-size: 0.9rem;
+    color: #6c757d;
+}
+
+/* Swiper Pagination Styles */
+.testimonials-slider .swiper-pagination-bullet {
+    background-color: var(--primary-color);
+    width: 10px;
+    height: 10px;
+    opacity: 0.5;
+}
+.testimonials-slider .swiper-pagination-bullet-active {
+    background-color: var(--secondary-color);
+    opacity: 1;
+}
+/* --- CTA Section --- */
+.cta-section {
+    background: linear-gradient(rgba(14, 33, 60, 0.92), rgba(14, 33, 60, 0.92)), url('https://images.unsplash.com/photo-1593344484962-796b4948a2fe?w=1000') center center;
+    background-size: cover;
+    background-attachment: fixed; /* يعطي تأثير parallax الجميل */
+}
+
+/* تعديل بسيط على زر البراند ليكون أكبر وأوضح */
+.cta-section .btn-brand {
+    padding: 15px 40px;
+    font-size: 1.1rem;
+}
+/* --- Footer --- */
+.footer-section {
+    background-color: var(--primary-color);
+    color: rgba(255, 255, 255, 0.7);
+}
+.footer-logo {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+.footer-logo img {
+    margin-left: 10px;
+}
+.footer-widget .footer-title {
+    color: #fff;
+    font-weight: 700;
+    margin-bottom: 25px;
+    font-size: 1.1rem;
+}
+.footer-links li {
+    margin-bottom: 12px;
+}
+.footer-links a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+.footer-links a:hover {
+    color: var(--secondary-color);
+    padding-right: 5px;
+}
+.footer-contact li {
+    display: flex;
+    align-items: flex-start; /* لضمان محاذاة الأيقونة مع بداية النص الطويل */
+    margin-bottom: 15px;
+}
+.footer-contact i {
+    color: var(--secondary-color);
+    margin-left: 15px;
+    font-size: 1.1rem;
+    margin-top: 3px;
+}
+.footer-contact span {
+    flex: 1;
+}
+.social-icons a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    border-radius: 50%;
+    text-decoration: none;
+    margin-left: 10px;
+    transition: all 0.3s ease;
+}
+.social-icons a:hover {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    transform: translateY(-3px);
+}
+.footer-bottom {
+    background-color: rgba(0, 0, 0, 0.2);
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.9rem;
 }
