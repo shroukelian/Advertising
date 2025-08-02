@@ -697,6 +697,9 @@ body {
     text-decoration: none;
     transition: all 0.3s ease;
 }
+.social-icons a i{
+    display: inline-block;
+}
 
 .social-icons a:hover {
     background-color: var(--secondary-color);
