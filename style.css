@@ -1,8 +1,3 @@
-/* ===================================================================
-   Final Corrected Version
-=================================================================== */
-
-/* 01. General Styles */
 :root {
     --primary-color: #0E213C;
     --secondary-color: #FFC107;
@@ -341,7 +336,7 @@ body {
 .service-card .icon-container {
     width: 60px;
     height: 60px;
-    margin-bottom: 20px; /* لا حاجة لـ margin auto هنا */
+    margin-bottom: 20px; 
     background-color: rgba(14, 33, 60, 0.07);
     color: var(--primary-color);
     border-radius: 12px;
@@ -712,7 +707,7 @@ body {
 }
 
 /* =================================================================== */
-/* 13. Floating Action Button (New Version)
+/* 13. Floating Action Button 
 /* =================================================================== */
 .fab-container {
     position: fixed;
@@ -726,7 +721,6 @@ body {
     width: 60px;
     height: 60px;
     background-color: var(--primary-color);
-    /* لون أزرق داكن */
     color: #fff;
     border-radius: 50%;
     display: flex;
@@ -739,13 +733,11 @@ body {
 
 .fab-container.active .fab-main-icon {
     transform: rotate(135deg);
-    /* تحويل الأيقونة إلى علامة X */
 }
 
 .fab-options {
     position: absolute;
     bottom: 75px;
-    /* فوق الأيقونة الرئيسية */
     right: 5px;
     display: flex;
     flex-direction: column;
@@ -798,7 +790,6 @@ body {
 }
 
 .fab-link:nth-child(2) .fab-icon-sm {
-    /* اتصال */
     background-color: var(--secondary-color);
     color: var(--primary-color);
 }
